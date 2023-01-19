@@ -1,0 +1,37 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.entity.Proveedor;
+import com.example.demo.service.IProveedorService;
+
+@Controller
+public class ProveedorController {
+	@Autowired
+	private IProveedorService proveedorService;
+	@GetMapping("/listado")
+	public String listar(Model model) {
+		List<Proveedor> lista = proveedorService.listarTodos();
+		model.addAttribute("titulo","LISTA DE PROVEEDORES");
+		model.addAttribute("vehiculos",lista);
+		return "listado";
+	}
+	
+	@GetMapping("/crear")
+	public String crear(Model model) {
+		Proveedor proveedor= new Proveedor();
+		List<Proveedor> listaProveedor = proveedorService.listarTodos();
+		model.addAttribute("titulo","NUEVO VEHICULO");
+		model.addAttribute("vehiculo",proveedor);
+		model.addAttribute("vehiculos",listaProveedor);
+		
+		return "frmEditar";
+	}
+	
+	
+}

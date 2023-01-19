@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+</head>
+<body>
+<header th:replace="plantilla/plantilla :: header"> </header>
+<div class="container mt-2">
+<form th:action="@{/grabar}" th:object="${vehiculo}" method="post">
+<div class="card bg-light">
+<div class="card-header bg-info text-white" th:text="${titulo}"></div>
+<div class="form-group row">
+<label class="col-md-2" for="nombre">Id:</label> <input
+type="text" th:field="*{id}"
+class="form-control form-control-sm col-md-10" id="Id"
+placeholder="Id"> <small> </small>
+</div>	
+<div class="form-group row">
+<label class="col-md-2" for="ruc">Ruc:</label> <input
+type="text" th:field="*{ruc}"
+class="form-control form-control-sm col-md-10" id="ruc"
+placeholder="Ruc del Proveedor"> <small> </small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="razonsocial">Razón Social:</label> <input
+type="text" th:field="*{razonsocial}"
+class="form-control form-control-sm col-md-10" id="razonsocial"
+placeholder="Razón Social del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="direccion">Dirección:</label> <input
+type="text" th:field="*{direccion}"
+class="form-control form-control-sm col-md-10" id="direccion"
+placeholder="Dirección del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="Precio">Precio</label> <input
+type="text" th:field="*{precio}"
+class="form-control form-control-sm col-md-10" id="modelo"
+placeholder="Precio del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="color">Color</label> <input
+type="text" th:field="*{color}"
+class="form-control form-control-sm col-md-10" id="color"
+placeholder="Color del Vehiculo"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="color">Fabricación</label> <input
+type="text" th:field="*{fabricacion}"
+class="form-control form-control-sm col-md-10" id="color"
+placeholder="Color del Vehiculo"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="color">Foto</label> <input
+type="text" th:field="*{foto}"
+class="form-control form-control-sm col-md-10" id="color"
+placeholder="Foto del Vehiculo"> <small></small>
+</div>
+</div>
+<div class="card-footer bg-light">
+	<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+</div>
+</div>
+</form>
+</div>
+<footer th:replace="plantilla/plantilla :: footer"> </footer>
+</body>
+</html>
+
+
+
+

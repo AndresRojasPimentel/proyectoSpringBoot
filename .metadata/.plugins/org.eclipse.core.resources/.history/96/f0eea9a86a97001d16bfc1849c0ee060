@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+</head>
+<body>
+<header th:replace="plantilla/plantilla :: header"> </header>
+<div class="container mt-2">
+<form th:action="@{/grabar}" th:object="${vehiculo}" method="post">
+<div class="card bg-light">
+<div class="card-header bg-info text-white" th:text="${titulo}"></div>
+<div class="form-group row">
+<label class="col-md-2" for="nombre">Id:</label> <input
+type="text" th:field="*{id}"
+class="form-control form-control-sm col-md-10" id="Id"
+placeholder="Id"> <small> </small>
+</div>	
+<div class="form-group row">
+<label class="col-md-2" for="ruc">Ruc:</label> <input
+type="text" th:field="*{ruc}"
+class="form-control form-control-sm col-md-10" id="ruc"
+placeholder="Ruc del Proveedor"> <small> </small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="razonsocial">Razón Social:</label> <input
+type="text" th:field="*{razonsocial}"
+class="form-control form-control-sm col-md-10" id="razonsocial"
+placeholder="Razón Social del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="direccion">Dirección:</label> <input
+type="text" th:field="*{direccion}"
+class="form-control form-control-sm col-md-10" id="direccion"
+placeholder="Dirección del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="distrito">Distrito:</label> <input
+type="text" th:field="*{distrito}"
+class="form-control form-control-sm col-md-10" id="distrito"
+placeholder="Distrito del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="telefono">Teléfono:</label> <input
+type="text" th:field="*{telefono}"
+class="form-control form-control-sm col-md-10" id="telefono"
+placeholder="Teléfono del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="correo">Correo:</label> <input
+type="text" th:field="*{correo}"
+class="form-control form-control-sm col-md-10" id="correo"
+placeholder="Correo del Proveedor"> <small></small>
+</div>
+<div class="form-group row">
+<label class="col-md-2" for="paginaweb">Foto</label> <input
+type="text" th:field="*{paginweb}"
+class="form-control form-control-sm col-md-10" id="paginaweb"
+placeholder="Página Web del Proveedor"> <small></small>
+</div>
+</div>
+<div class="card-footer bg-light">
+	<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+</div>
+</div>
+</form>
+</div>
+<footer th:replace="plantilla/plantilla :: footer"> </footer>
+</body>
+</html>
+
+
+
+
